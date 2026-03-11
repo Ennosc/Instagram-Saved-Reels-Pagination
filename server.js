@@ -14,6 +14,7 @@ const authRoutes = require('./routes/auth')
 const methodOverride = require("method-override");
 const cors = require('cors')
 const path = require('path');
+const buildPath = path.join(__dirname, 'dist');
 
 require('dotenv').config({path: './config/.env'})
 require('./config/passport')(passport)
@@ -55,9 +56,9 @@ app.use('/api/auth', authRoutes)
 app.use('/api/upload', uploadRoutes)
 app.use('/api/saved', savedRoutes)
 
-app.use(express.static(path.join(__dirname, 'dist')));
-app.get('/:path*', (req, res) => {
-  res.sendFile(path.join(buildPath, 'index.html'));
+app.use(express.static(buildPath));
+app.get('*', (req, res) => {
+    res.sendFile(path.join(buildPath, 'index.html'));
 });
 
 app.listen(process.env.PORT, ()=>{
