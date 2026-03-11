@@ -13,6 +13,7 @@ const savedRoutes = require('./routes/saved')
 const authRoutes = require('./routes/auth')
 const methodOverride = require("method-override");
 const cors = require('cors')
+const path = require('path');
 
 require('dotenv').config({path: './config/.env'})
 require('./config/passport')(passport)
@@ -53,6 +54,11 @@ app.use('/api/', homeRoutes)
 app.use('/api/auth', authRoutes)
 app.use('/api/upload', uploadRoutes)
 app.use('/api/saved', savedRoutes)
+
+app.use(express.static(path.join(__dirname, 'dist')));
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+});
 
 app.listen(process.env.PORT, ()=>{
     console.log('Server is running, you better catch it!')
