@@ -14,7 +14,7 @@ const authRoutes = require('./routes/auth')
 const methodOverride = require("method-override");
 const cors = require('cors')
 const path = require('path');
-const buildPath = path.join(__dirname, 'dist');
+const buildPath = path.join(__dirname, 'frontend', 'dist');
 
 require('dotenv').config({path: './config/.env'})
 require('./config/passport')(passport)
