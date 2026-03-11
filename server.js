@@ -56,8 +56,8 @@ app.use('/api/upload', uploadRoutes)
 app.use('/api/saved', savedRoutes)
 
 app.use(express.static(path.join(__dirname, 'dist')));
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+app.get('(.*)', (req, res) => {
+  res.sendFile(path.join(buildPath, 'index.html'));
 });
 
 app.listen(process.env.PORT, ()=>{
