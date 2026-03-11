@@ -1,0 +1,525 @@
+body {
+  background: rgb(20, 20, 20);
+}
+.layout {
+  display: flex;
+}
+
+.sidebar {
+  width: 185px;
+  height: 100vh;
+  background: rgb(28, 29, 29);
+  padding: 20px;
+  position: sticky;
+  top: 0;
+}
+.sidebar-content {
+    
+    flex-grow: 1; 
+}
+.sidebar-bottom {
+    margin-top: auto; 
+    padding-top: 20px;
+    border-top: 1px solid #eee; 
+}
+
+.content {
+  flex: 1;
+  padding: 5px;
+}
+.navBtn {
+  display: flex;
+  margin-bottom: 10px;
+  justify-content: space-between; 
+  align-items: center;
+  width: 100%; 
+  padding: 10px;
+  background: #444;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.navBtn .infoIcon i {
+  font-size: 0.9em;
+  color: #ccc;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.navBtn .infoIcon i:hover {
+  color: #fff;
+}
+.navBtn:hover {
+  background: #495057;
+}
+
+.navBtn.active {
+  background: #0d6efd; 
+}
+
+
+.dateForm {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+}
+
+.dateForm input[type="date"] {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #555;
+  background: #333;
+  color: white;
+  cursor: pointer;
+}
+
+
+.dateForm button.navBtn {
+  padding: 5px 10px;
+  text-align: center;
+  font-size: 0.9em;
+}
+
+
+
+.posts {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+}
+
+.post {
+  position: relative; 
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; 
+}
+
+.deleteForm {
+  margin-top: 5px; 
+}
+
+.pagination {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin: 30px 0;
+}
+/*
+.pagination a, .pagination span , .jumpForm input, .jumpForm button{
+  display: inline-block;
+  margin: 0 3px;
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  color: 
+  text-decoration: none;
+  border-radius: 3px;
+  
+}*/
+
+.page-btn {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  background-color: #333;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+
+.pagination .current {
+  background-color: #333;
+  color: white;
+  border-color: #333;
+}
+
+.page-btn.active {
+  background-color: #0d6efd;
+  color: white;
+  border-color: #333;
+  font-weight: bold;
+}
+
+.page-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+.page-btn:hover {
+  background-color: #053f96;
+}
+
+.jump {
+  display: inline-flex;
+  gap: 6px;
+  margin-left: 3px;
+}
+.jump-input{
+  width: 80px;
+}
+
+.post-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  background: rgb(20, 20, 20);
+  border: 1px solid #efefef;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.date-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px; 
+  color: #8e8e8e; 
+  font-size: 0.85rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}
+
+.date-wrapper i {
+  font-size: 0.75rem; 
+}
+
+
+.no-posts-container {
+  grid-column: 1 / -1; 
+  text-align: center;
+  padding: 50px;
+  color: #666;
+  background: #f9f9f9;
+  border-radius: 10px;
+  border: 2px dashed #eee;
+  margin: 20px;
+}
+
+.no-posts-container p {
+  margin-top: 15px;
+  font-size: 1.1rem;
+}
+
+
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(20, 20, 20);
+}
+
+
+.home-card {
+  background-color: rgb(28, 29, 29);
+  padding: 3rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  border: 1px solid #333;
+}
+
+.home-header h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.home-header p {
+  color: #8e8e8e;
+  margin-bottom: 2rem;
+}
+
+
+.home-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.home-actions button {
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.1s;
+}
+
+.home-actions button:active {
+  transform: scale(0.98);
+}
+
+.btn-primary {
+  background-color: #0095f6;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #1877f2;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: #0095f6;
+  border: 1px solid #0095f6 !important;
+}
+
+.btn-guest {
+  background-color: #333;
+  color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-guest:hover {
+  background-color: #444;
+}
+
+/* Trennlinie */
+.divider {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  color: #555;
+  font-size: 0.8rem;
+}
+
+.divider::before, .divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #333;
+  margin: 0 10px;
+}
+
+
+
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(20, 20, 20);
+}
+
+.auth-card {
+  background-color: rgb(28, 29, 29);
+  padding: 2.5rem;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid #333;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.auth-header h2 {
+  color: white;
+  font-size: 1.6rem;
+  margin-bottom: 5px;
+}
+
+.auth-header p {
+  color: #8e8e8e;
+  font-size: 0.9rem;
+}
+
+/* Form Styling */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 15px;
+  background-color: rgb(20, 20, 20);
+  border: 1px solid #444;
+  border-radius: 6px;
+  color: white;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #0095f6;
+}
+
+
+.error-container {
+  background-color: rgba(255, 0, 0, 0.1);
+  border-left: 4px solid #ff4d4d;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+.error-msg {
+  color: #ff4d4d;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+
+.auth-footer {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #8e8e8e;
+}
+
+.auth-footer a {
+  color: #0095f6;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.auth-footer a:hover {
+  text-decoration: underline;
+}
+
+.back-link {
+  display: block;
+  margin-top: 15px;
+  font-size: 0.8rem;
+  color: #555 !important;
+}
+
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+.upload-card {
+    max-width: 500px; 
+}
+
+
+.drop-zone {
+    border: 2px dashed #444;
+    border-radius: 12px;
+    padding: 40px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: rgb(20, 20, 20);
+    margin-bottom: 20px;
+}
+
+.drop-zone:hover, .drop-zone.dragging {
+    border-color: #0095f6;
+    background: rgba(0, 149, 246, 0.05);
+}
+
+.drop-zone.has-file {
+    border-style: solid;
+    border-color: #28a745;
+    background: rgba(40, 167, 69, 0.05);
+}
+
+.drop-zone-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: #8e8e8e;
+}
+
+.drop-zone-content i {
+    font-size: 2.5rem;
+}
+
+.drop-zone.has-file .drop-zone-content {
+    color: #28a745;
+}
+
+.drop-zone span {
+    font-size: 0.9rem;
+    word-break: break-all;
+}
+
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.fa-spin {
+    animation: spin 1s linear infinite;
+    margin-right: 8px;
+}
+
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: rgb(28, 29, 29);
+    padding: 20px 10px;
+}
+
+
+.sidebar-content {
+    flex-grow: 1; 
+}
+
+
+.sidebar-footer {
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    margin-top: 20px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+}
+
+.user-info i {
+    font-size: 1.5rem;
+    color: #0095f6; 
+}
+
+.user-details {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; 
+}
+
+.user-status {
+    font-size: 0.7rem;
+    color: #8e8e8e;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.user-email {
+    font-size: 0.85rem;
+    color: #efefef;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    font-weight: 500;
+}
